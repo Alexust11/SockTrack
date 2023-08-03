@@ -1,5 +1,6 @@
 package com.example.socktrack.service;
 
+import com.example.socktrack.model.Operation;
 import com.example.socktrack.model.Socks;
 import com.example.socktrack.repository.SocksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,23 @@ public class SocksService {
 
     public void deleteSocks(Long id) {
         socksRepository.deleteById(id);
+    }
+
+    public int getTotalQuantity(String color, Operation operation, Integer cottonPart) {
+        List<Socks> socksList = socksRepository.findByColor(color);
+
+        int totalQuantity = 0;
+
+        for (Socks socks : socksList) {
+            if (operation == Operation.MORE_THAN && socks.getCottonPart() > cottonPart) {
+                totalQuantity += socks.getQuantity();
+            } else if (operation == Operation.LESS_THAN && socks.getCottonPart() < cottonPart) {
+                totalQuantity += socks.getQuantity();
+            } else if (operation == Operation.EQUAL && socks.getCottonPart() == cottonPart) {
+                totalQuantity += socks.getQuantity();
+            }
+        }
+
+        return totalQuantity;
     }
 }
