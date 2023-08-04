@@ -22,4 +22,21 @@ private Long id;
 
     @Column(name = "quantity")
     private Integer quantity;
+
+    public Socks(String color, Integer cottonPart, Integer quantity) {
+        this.color = color;
+        this.cottonPart = cottonPart;
+        this.quantity = quantity;
+    }
+
+    public Socks(Long id, String color, Integer cottonPart, Integer quantity) {
+        this.id = id;
+        this.color = color;
+        this.cottonPart = cottonPart;
+        this.quantity = quantity;
+    }
+
+    public Socks() {
+
+    }
 }
