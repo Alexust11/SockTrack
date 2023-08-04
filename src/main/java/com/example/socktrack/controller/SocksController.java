@@ -1,6 +1,6 @@
 package com.example.socktrack.controller;
 
-import com.example.socktrack.model.Operation;
+import com.example.socktrack.Operation;
 import com.example.socktrack.model.Socks;
 import com.example.socktrack.service.SocksService;
 import org.springframework.http.HttpStatus;

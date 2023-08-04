@@ -1,13 +1,12 @@
 package com.example.socktrack.service;
 
 import com.example.socktrack.exception.SocksNotFoundException;
-import com.example.socktrack.model.Operation;
+import com.example.socktrack.Operation;
 import com.example.socktrack.model.Socks;
 import com.example.socktrack.repository.SocksRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SocksService {
@@ -70,7 +69,6 @@ public class SocksService {
         existingSocks.setColor(socks.getColor());
         existingSocks.setCottonPart(socks.getCottonPart());
         existingSocks.setQuantity(socks.getQuantity());
-
         socksRepository.save(existingSocks);
     }
 }
