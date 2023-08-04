@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface SocksRepository extends JpaRepository<Socks, Long>{
     List<Socks> findByColor(String color);
+    Socks getSocksById (Long Id);
+    List<Socks> findByColorAndCottonPart(String color, Integer cottonPart);
 }
